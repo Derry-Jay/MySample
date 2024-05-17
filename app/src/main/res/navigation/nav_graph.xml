@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/SplashFragment">
+
+    <fragment
+        android:id="@+id/SplashFragment"
+        android:name="com.my.sample.fragments.SplashFragment"
+        android:label="@string/Splash_fragment_label"
+        tools:layout="@layout/splash_fragment">
+        <action
+            android:id="@+id/action_SplashFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.my.sample.fragments.LoginFragment"
+        android:label="@string/Login_fragment_label"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_LoginFragment_to_DashboardFragment"
+            app:destination="@id/DashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/DashboardFragment"
+        android:name="com.my.sample.fragments.DashboardFragment"
+        android:label="@string/dash_board"
+        tools:layout="@layout/dashboard_fragment" >
+        <action
+            android:id="@+id/action_DashboardFragment_to_GalleryFragment"
+            app:destination="@id/galleryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.my.sample.fragments.GalleryFragment"
+        android:label="@string/gallery"
+        tools:layout="@layout/gallery_fragment" />
+
+</navigation>

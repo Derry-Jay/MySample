@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MySample</string>
+    <string name="action_settings">Settings</string>
+    <string name="splash_screen_delay">3</string>
+    <string name="phone">Phone Number</string>
+    <string name="Login_fragment_label">Login</string>
+    <string name="Splash_fragment_label">Splash</string>
+    <string name="next">Next</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="gallery">Gallery</string>
+    <string name="dash_board">Dashboard</string>
+    <string name="base_url_4">https://dummyjson.com/</string>
+    <string name="base_url_2">https://api.storerestapi.com/</string>
+    <string name="base_url_1">https://api.escuelajs.co/api/v1/</string>
+    <string name="base_url_3">https://jsonplaceholder.typicode.com/</string>
+</resources>
