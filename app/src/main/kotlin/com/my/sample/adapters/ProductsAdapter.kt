@@ -1,5 +1,6 @@
 package com.my.sample.adapters
 
+//import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.my.sample.R
-//import android.content.Context
-import com.my.sample.extensions.isEmpty
 import com.my.sample.extensions.bindImage
+import com.my.sample.extensions.isEmpty
 import com.my.sample.extensions.showSnackBar
 import com.my.sample.extensions.str
 import com.my.sample.models.Product
@@ -48,7 +48,13 @@ class ProductsAdapter(private val pList: ArrayList<Product>) :
 
         holder.categoryButton.setOnClickListener {
             println(product.description)
-            holder.imageView.showSnackBar(product.title, Snackbar.LENGTH_SHORT, product.category, null, null)
+            holder.imageView.showSnackBar(
+                product.title,
+                Snackbar.LENGTH_SHORT,
+                product.category,
+                null,
+                null
+            )
         }
 
         holder.categoryButton.setOnLongClickListener {
@@ -57,7 +63,13 @@ class ProductsAdapter(private val pList: ArrayList<Product>) :
         }
 
         holder.textViewDescription.setOnClickListener {
-            it.showSnackBar(product.description, Snackbar.LENGTH_LONG, "Replace with your own action", null, null)
+            it.showSnackBar(
+                product.description,
+                Snackbar.LENGTH_LONG,
+                "Replace with your own action",
+                null,
+                null
+            )
         }
     }
 

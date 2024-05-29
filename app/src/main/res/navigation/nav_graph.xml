@@ -19,7 +19,7 @@
         android:id="@+id/LoginFragment"
         android:name="com.my.sample.fragments.LoginFragment"
         android:label="@string/Login_fragment_label"
-        tools:layout="@layout/login_fragment" >
+        tools:layout="@layout/login_fragment">
         <action
             android:id="@+id/action_LoginFragment_to_DashboardFragment"
             app:destination="@id/DashboardFragment" />
@@ -29,7 +29,7 @@
         android:id="@+id/DashboardFragment"
         android:name="com.my.sample.fragments.DashboardFragment"
         android:label="@string/dash_board"
-        tools:layout="@layout/dashboard_fragment" >
+        tools:layout="@layout/dashboard_fragment">
         <action
             android:id="@+id/action_DashboardFragment_to_GalleryFragment"
             app:destination="@id/galleryFragment" />

@@ -1,5 +1,6 @@
 package com.my.sample.fragments
 
+//import com.my.sample.extensions.isValidEmail
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,11 +14,10 @@ import com.my.sample.data.pwdRegex
 import com.my.sample.databinding.LoginFragmentBinding
 import com.my.sample.extensions.isEmpty
 import com.my.sample.extensions.navCon
-//import com.my.sample.extensions.isValidEmail
 import com.my.sample.extensions.showSnackBar
 import com.my.sample.extensions.trimmed
-import com.my.sample.ui.TextFormField
 import com.my.sample.ui.HiddenBackButtonAppBarFragment
+import com.my.sample.ui.TextFormField
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
@@ -132,7 +132,13 @@ class LoginFragment : HiddenBackButtonAppBarFragment() {
 //                val msg = getString(R.string.msg_token_fmt, token)
 //                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
             }
-            it?.showSnackBar("Sign Up Module Unimplemented", Snackbar.LENGTH_LONG, "Action", null, null)
+            it?.showSnackBar(
+                "Sign Up Module Unimplemented",
+                Snackbar.LENGTH_LONG,
+                "Action",
+                null,
+                null
+            )
         }
 
         binding.login.clicks().onEach {

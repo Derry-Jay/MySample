@@ -42,7 +42,7 @@ class GalleryFragment : Fragment() {
             // get image path
             val pic: String = s
             val ls = pic.split("-", "_", ".")
-            val nl = ls.subList(0,if (ls.size > 2) 2 else 1)
+            val nl = ls.subList(0, if (ls.size > 2) 2 else 1)
                 .joinToString(" ") { it.firstLetterCapitalized }
             // get input stream
             val ims: InputStream? = context?.assets?.open("imgs/$pic")
@@ -51,7 +51,7 @@ class GalleryFragment : Fragment() {
                 ?: Drawable.createFromPath("assets/icon/loader.gif")
             // set image to ImageView
             ims?.close()
-            Picture(d!!,nl)
+            Picture(d!!, nl)
         } ?: listOf()
 
         binding.recyclerview.adapter = PicturesAdapter(data)

@@ -377,12 +377,13 @@ fun View.showSnackBar(
     snb?.show()
 }
 
-val Any?.str: String get() {
-    if (this == null) return "null".firstLetterCapitalized
-    // After the null check, 'this' is autocast to a non-nullable type, so the toString() below
-    // resolves to the member function of the Any class
-    return toString()
-}
+val Any?.str: String
+    get() {
+        if (this == null) return "null".firstLetterCapitalized
+        // After the null check, 'this' is autocast to a non-nullable type, so the toString() below
+        // resolves to the member function of the Any class
+        return toString()
+    }
 
 @BindingAdapter("imageUrl")
 fun ImageView.bindImage(imgUrl: String?): ImageView {

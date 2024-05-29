@@ -6,17 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.my.sample.R
+import com.my.sample.adapters.ProductsAdapter
 import com.my.sample.databinding.DashboardFragmentBinding
+import com.my.sample.extensions.apiLink
+import com.my.sample.extensions.navCon
+import com.my.sample.extensions.retrofitInstance
+import com.my.sample.extensions.showSnackBar
+import com.my.sample.extensions.stringFromResource
+import com.my.sample.models.Product
+import com.my.sample.models.ProductBase
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import com.my.sample.R
-import com.my.sample.adapters.ProductsAdapter
-import com.my.sample.extensions.*
-import com.my.sample.models.Product
-import com.my.sample.models.ProductBase
 
-class DashboardFragment: Fragment() {
+class DashboardFragment : Fragment() {
 
     private var _binding: DashboardFragmentBinding? = null
 
@@ -41,7 +45,8 @@ class DashboardFragment: Fragment() {
 
         // ArrayList of class City
         var data: ArrayList<Product>
-        val call = view.stringFromResource(R.string.base_url_4).retrofitInstance.apiLink.getProducts()
+        val call =
+            view.stringFromResource(R.string.base_url_4).retrofitInstance.apiLink.getProducts()
         call.enqueue(object : Callback<ProductBase> {
             override fun onResponse(
                 call: Call<ProductBase>,
@@ -63,7 +68,7 @@ class DashboardFragment: Fragment() {
 
             override fun onFailure(call: Call<ProductBase>, t: Throwable) {
                 t.printStackTrace()
-                return view.showSnackBar(t.message ?: "", 2, t.localizedMessage ?: "", null,null)
+                return view.showSnackBar(t.message ?: "", 2, t.localizedMessage ?: "", null, null)
             }
         })
 
