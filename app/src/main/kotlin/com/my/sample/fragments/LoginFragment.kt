@@ -71,7 +71,6 @@ class LoginFragment : HiddenBackButtonAppBarFragment() {
                     !pwdRegex.matches(
                         it?.trimmed ?: ""
                     ) -> "Invalid Password"
-
                     else -> null
                 }
             }

@@ -9,9 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.my.sample.R
 import com.my.sample.adapters.ProductsAdapter
 import com.my.sample.databinding.DashboardFragmentBinding
-import com.my.sample.extensions.apiLink
+import com.my.sample.extensions.api
 import com.my.sample.extensions.navCon
-import com.my.sample.extensions.retrofitInstance
 import com.my.sample.extensions.showSnackBar
 import com.my.sample.extensions.stringFromResource
 import com.my.sample.models.Product
@@ -46,7 +45,7 @@ class DashboardFragment : Fragment() {
         // ArrayList of class City
         var data: ArrayList<Product>
         val call =
-            view.stringFromResource(R.string.base_url_4).retrofitInstance.apiLink.getProducts()
+            view.stringFromResource(R.string.base_url_4).api.getProducts()
         call.enqueue(object : Callback<ProductBase> {
             override fun onResponse(
                 call: Call<ProductBase>,
